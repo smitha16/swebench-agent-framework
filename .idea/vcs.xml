@@ -3,5 +3,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/workspaces/astropy__astropy-12907" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/django__django-11099" vcs="Git" />
   </component>
 </project>
