@@ -1,0 +1,13 @@
+diff --git a/django/contrib/syndication/views.py b/django/contrib/syndication/views.py
+index 68ffb0bfe0..4c2804b67f 100644
+--- a/django/contrib/syndication/views.py
++++ b/django/contrib/syndication/views.py
+@@ -12,7 +12,7 @@ from django.utils.timezone import get_default_timezone, is_naive, make_aware
+ from django.utils.translation import get_language
+ 
+ 
+-def add_domain(domain, url, secure=False):
++def add_domain(domain, url, secure=False, comments=None):
+     protocol = 'https' if secure else 'http'
+     if url.startswith('//'):
+         # Support network-path reference (see #16753) - RSS requires a protocol

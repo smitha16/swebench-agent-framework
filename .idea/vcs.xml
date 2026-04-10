@@ -4,6 +4,17 @@
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/workspaces/astropy__astropy-12907" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/workspaces/django__django-11099" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/django__django-13230" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/django__django-14608" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/matplotlib__matplotlib-23562" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/pydata__xarray-3364" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/pytest-dev__pytest-7168" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/scikit-learn__scikit-learn-13779" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/sphinx-doc__sphinx-8595" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/sympy__sympy-18087" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/workspaces/validate_django__django-11099" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/validate_django__django-13230" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/validate_matplotlib__matplotlib-23562" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/workspaces/validate_pydata__xarray-3364" vcs="Git" />
   </component>
 </project>

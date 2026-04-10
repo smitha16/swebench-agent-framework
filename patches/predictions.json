@@ -1,0 +1,52 @@
+[
+  {
+    "instance_id": "astropy__astropy-12907",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "django__django-11099",
+    "model_patch": "diff --git a/django/contrib/auth/validators.py b/django/contrib/auth/validators.py\nindex b4878cfd45..118da28408 100644\n--- a/django/contrib/auth/validators.py\n+++ b/django/contrib/auth/validators.py\n@@ -7,7 +7,7 @@ from django.utils.translation import gettext_lazy as _\n \n @deconstructible\n class ASCIIUsernameValidator(validators.RegexValidator):\n-    regex = r'^[\\w.@+-]+$'\n+    regex = r'\\A[\\w.@+-]+\\Z'\n     message = _(\n         'Enter a valid username. This value may contain only English letters, '\n         'numbers, and @/./+/-/_ characters.'\n",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "django__django-13230",
+    "model_patch": "diff --git a/django/contrib/syndication/views.py b/django/contrib/syndication/views.py\nindex 68ffb0bfe0..4c2804b67f 100644\n--- a/django/contrib/syndication/views.py\n+++ b/django/contrib/syndication/views.py\n@@ -12,7 +12,7 @@ from django.utils.timezone import get_default_timezone, is_naive, make_aware\n from django.utils.translation import get_language\n \n \n-def add_domain(domain, url, secure=False):\n+def add_domain(domain, url, secure=False, comments=None):\n     protocol = 'https' if secure else 'http'\n     if url.startswith('//'):\n         # Support network-path reference (see #16753) - RSS requires a protocol\n",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "django__django-14608",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "matplotlib__matplotlib-23562",
+    "model_patch": "diff --git a/lib/mpl_toolkits/mplot3d/art3d.py b/lib/mpl_toolkits/mplot3d/art3d.py\nindex 8fe6e7a9c1..23b2b08bb2 100644\n--- a/lib/mpl_toolkits/mplot3d/art3d.py\n+++ b/lib/mpl_toolkits/mplot3d/art3d.py\n@@ -867,7 +867,7 @@ class Poly3DCollection(PolyCollection):\n         self.stale = True\n \n     def get_facecolor(self):\n-        return self._facecolors2d\n+        return self.get_facecolor() if hasattr(self, '_facecolors2d') else None\n \n     def get_edgecolor(self):\n         return self._edgecolors2d\n",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "pydata__xarray-3364",
+    "model_patch": "diff --git a/xarray/core/concat.py b/xarray/core/concat.py\nindex ecae2566..b0a8ec6b 100644\n--- a/xarray/core/concat.py\n+++ b/xarray/core/concat.py\n@@ -16,6 +16,7 @@ def concat(\n     positions=None,\n     fill_value=dtypes.NA,\n     join=\"outer\",\n+    ignore_missing_vars=False,\n ):\n     \"\"\"Concatenate xarray objects along a new or existing dimension.\n \ndiff --git a/xarray/core/dtypes.py b/xarray/core/dtypes.py\nindex 4db2990a..295c15c3 100644\n--- a/xarray/core/dtypes.py\n+++ b/xarray/core/dtypes.py\n@@ -38,7 +38,7 @@ NINF = AlwaysLessThan()\n PROMOTE_TO_OBJECT = [\n     {np.number, np.character},  # numpy promotes to character\n     {np.bool_, np.character},  # numpy promotes to character\n-    {np.bytes_, np.unicode_},  # numpy promotes to unicode\n+    {np.bytes_, np.str_},  # numpy promotes to unicode\n ]\n \n \ndiff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py\nindex a5c9920f..d1448f41 100644\n--- a/xarray/tests/test_dataset.py\n+++ b/xarray/tests/test_dataset.py\n@@ -64,13 +64,13 @@ def create_test_data(seed=None):\n     }\n     _dims = {\"dim1\": 8, \"dim2\": 9, \"dim3\": 10}\n \n-    obj = Dataset()\n+    obj = Dataset(writable=True)\n     obj[\"time\"] = (\"time\", pd.date_range(\"2000-01-01\", periods=20))\n     obj[\"dim2\"] = (\"dim2\", 0.5 * np.arange(_dims[\"dim2\"]))\n     obj[\"dim3\"] = (\"dim3\", list(\"abcdefghij\"))\n     for v, dims in sorted(_vars.items()):\n         data = rs.normal(size=tuple(_dims[d] for d in dims))\n-        obj[v] = (dims, data, {\"foo\": \"variable\"})\n+        obj[v] = Variable(dims, data, {\"foo\": \"variable\"})\n     obj.coords[\"numbers\"] = (\n         \"dim3\",\n         np.array([0, 1, 2, 0, 0, 1, 1, 2, 2, 3], dtype=\"int64\"),\n",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7168",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "scikit-learn__scikit-learn-13779",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "sphinx-doc__sphinx-8595",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  },
+  {
+    "instance_id": "sympy__sympy-18087",
+    "model_patch": "(no output)",
+    "model_name_or_path": "qwen2.5-coder:14b"
+  }
+]

@@ -1,12 +1,68 @@
 [
   {
+    "instance_id": "astropy__astropy-12907",
+    "status": "no_changes"
+  },
+  {
     "instance_id": "django__django-11099",
     "status": "validated",
     "agent_passed": false,
     "gold_passed": false,
-    "agent_output": " <module>\n    from django.utils.version import get_version\ndjango/utils/version.py:6: in <module>\n    from distutils.version import LooseVersion\nE   ModuleNotFoundError: No module named 'distutils'\n=========================== short test summary info ============================\nERROR tests/auth_tests/test_validators.py\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n1 error in 0.10s\n",
+    "agent_output": ". Use setlocale(), getencoding() and getlocale() instead.\n    encoding = locale.getdefaultlocale()[1] or 'ascii'\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nERROR tests/auth_tests/test_validators.py\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n!!!!!!!!!!!!!!!!!!!! Interrupted: 1 error during collection !!!!!!!!!!!!!!!!!!!!\n2 warnings, 1 error in 0.19s\n",
     "test_files": [
       "tests/auth_tests/test_validators.py"
     ]
+  },
+  {
+    "instance_id": "django__django-13230",
+    "status": "validated",
+    "agent_passed": false,
+    "gold_passed": false,
+    "agent_output": "module>\n    from .config import AppConfig\ndjango/apps/config.py:7: in <module>\n    from django.utils.deprecation import RemovedInDjango41Warning\ndjango/utils/deprecation.py:5: in <module>\n    from asgiref.sync import sync_to_async\nE   ModuleNotFoundError: No module named 'asgiref'\n=========================== short test summary info ============================\nERROR tests/syndication_tests/feeds.py\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 error in 0.32s\n",
+    "test_files": [
+      "tests/syndication_tests/feeds.py",
+      "tests/syndication_tests/tests.py"
+    ]
+  },
+  {
+    "instance_id": "django__django-14608",
+    "status": "no_changes"
+  },
+  {
+    "instance_id": "matplotlib__matplotlib-23562",
+    "status": "validated",
+    "agent_passed": false,
+    "gold_passed": false,
+    "agent_output": "",
+    "test_files": [
+      "lib/mpl_toolkits/tests/test_mplot3d.py"
+    ]
+  },
+  {
+    "instance_id": "pydata__xarray-3364",
+    "status": "validated",
+    "agent_passed": false,
+    "gold_passed": false,
+    "agent_output": "ramework/workspaces/validate_pydata__xarray-3364/xarray/plot/plot.py:291: SyntaxWarning: \"is\" with 'tuple' literal. Did you mean \"==\"?\n    if args is ():\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED xarray/tests/test_combine.py::TestTileIDsFromNestedList::test_1d - Typ...\n!!!!!!!!!!!!!!!!!!!!!!!!!! stopping after 1 failures !!!!!!!!!!!!!!!!!!!!!!!!!!!\n1 failed, 4 warnings in 0.98s\n",
+    "test_files": [
+      "xarray/tests/test_combine.py",
+      "xarray/tests/test_concat.py"
+    ]
+  },
+  {
+    "instance_id": "pytest-dev__pytest-7168",
+    "status": "no_changes"
+  },
+  {
+    "instance_id": "scikit-learn__scikit-learn-13779",
+    "status": "no_changes"
+  },
+  {
+    "instance_id": "sphinx-doc__sphinx-8595",
+    "status": "no_changes"
+  },
+  {
+    "instance_id": "sympy__sympy-18087",
+    "status": "no_changes"
   }
 ]

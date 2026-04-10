@@ -1,0 +1,45 @@
+diff --git a/xarray/core/concat.py b/xarray/core/concat.py
+index ecae2566..b0a8ec6b 100644
+--- a/xarray/core/concat.py
++++ b/xarray/core/concat.py
+@@ -16,6 +16,7 @@ def concat(
+     positions=None,
+     fill_value=dtypes.NA,
+     join="outer",
++    ignore_missing_vars=False,
+ ):
+     """Concatenate xarray objects along a new or existing dimension.
+ 
+diff --git a/xarray/core/dtypes.py b/xarray/core/dtypes.py
+index 4db2990a..295c15c3 100644
+--- a/xarray/core/dtypes.py
++++ b/xarray/core/dtypes.py
+@@ -38,7 +38,7 @@ NINF = AlwaysLessThan()
+ PROMOTE_TO_OBJECT = [
+     {np.number, np.character},  # numpy promotes to character
+     {np.bool_, np.character},  # numpy promotes to character
+-    {np.bytes_, np.unicode_},  # numpy promotes to unicode
++    {np.bytes_, np.str_},  # numpy promotes to unicode
+ ]
+ 
+ 
+diff --git a/xarray/tests/test_dataset.py b/xarray/tests/test_dataset.py
+index a5c9920f..d1448f41 100644
+--- a/xarray/tests/test_dataset.py
++++ b/xarray/tests/test_dataset.py
+@@ -64,13 +64,13 @@ def create_test_data(seed=None):
+     }
+     _dims = {"dim1": 8, "dim2": 9, "dim3": 10}
+ 
+-    obj = Dataset()
++    obj = Dataset(writable=True)
+     obj["time"] = ("time", pd.date_range("2000-01-01", periods=20))
+     obj["dim2"] = ("dim2", 0.5 * np.arange(_dims["dim2"]))
+     obj["dim3"] = ("dim3", list("abcdefghij"))
+     for v, dims in sorted(_vars.items()):
+         data = rs.normal(size=tuple(_dims[d] for d in dims))
+-        obj[v] = (dims, data, {"foo": "variable"})
++        obj[v] = Variable(dims, data, {"foo": "variable"})
+     obj.coords["numbers"] = (
+         "dim3",
+         np.array([0, 1, 2, 0, 0, 1, 1, 2, 2, 3], dtype="int64"),
